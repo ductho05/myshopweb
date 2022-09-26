@@ -1,8 +1,25 @@
 from django.db import models
+from django.urls import reverse
 from customer.models import Category
 from django.utils.html import mark_safe
 from manufacturer.models import Manufacturer
 # Create your models here.
+class Category(models.Model):
+    name = models.CharField(max_length=50)
+    def __unicode__(self):
+        return self.content
+    def __str__(self):
+        return self.name
+    def get_absolute_path(self):
+        return reverse('product:productlist') + f'?category_id={self.id}'
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name = 'category'
+        verbose_name_plural = 'categories'
+ 
+
+   
 class Product(models.Model):
     name = models.CharField(max_length=200)
     price = models.FloatField(default=0)

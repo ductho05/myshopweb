@@ -41,8 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'customer',
     'manufacturer',
-    'product',
+    'product.apps.ProductConfig',
     'feedback',
+    'crispy_forms',
+    'easy_thumbnails',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -83,7 +86,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'shop_web',
-        'PASSWORD':'',
+        'PASSWORD':'123456',
         'USER':'root',
         'POST':'localhost',
         'PORT':'',

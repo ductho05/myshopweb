@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block title %} Categories {% endblock title %}
+{% load static %}
+{%block content %}
+<div class="row my-2">
+  {% for c in categories %}
+  <div class="col-lg-4 col-md-6 col-12 my-2 px-sm-2 ">
+    <div class="card text-center">
+      <div class="card-body card-body-padding">
+        <h3 class="font-weight-light">
+          <a title="{{c.name}}" href="{{ c.get_absolute_path }}" class="category-list">{{c.name}}</a>
+        </h3>
+      </div>
+      <div class="card-footer">
+        {{c.num_products}} Product{{c.num_products|pluralize}}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
