@@ -1,17 +1,19 @@
 from django.shortcuts import render
 from django.views import generic
 from django_filters.views import FilterView
+from django.views.generic.base import TemplateView
 from .filter import ProductFilter
 from .models import Category,Product
 from django.db.models import Count
 from django.core.paginator import Paginator
 from django.shortcuts import render
-def produclist(request):
-    content = {}
-    categorys = Category.objects.all()
-    content['categorys'] = categorys
-    return render(request,'product/productlist.html',content)
+# def listing(request):
+#     product_list = Product.objects.all()
+#     paginator = Paginator(product_list, 25) # Show 25 contacts per page.
 
+#     page_number = request.GET.get('page')
+#     page_obj = paginator.get_page(page_number)
+#     return render(request, 'productlist.html', {'page_obj': page_obj})
 
 class ProductList(FilterView):
     model = Product
@@ -21,6 +23,18 @@ class ProductList(FilterView):
     filterset_class = ProductFilter
     context_object_name = 'products'
     template_name = 'productlist.html'
+    
+    def get_queryset(self):
+        qs = super().get_queryset()
+        if 'category_slug' in self.kwargs:
+            qs = qs.filter(category__slug=self.kwargs['category_slug'])
+        return qs
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['dscategory'] = Category.objects.all()
+        # context['products'] = Product.objects.all()
+        return context
+
 
 class CategoriesList(generic.ListView):
     template_name = 'categorylist.html'
