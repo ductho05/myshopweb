@@ -34,6 +34,16 @@ class ProductList(FilterView):
         context['dscategory'] = Category.objects.all()
         # context['products'] = Product.objects.all()
         return context
+class ProductDetails(generic.ListView):
+    model = Product
+    template_name = 'productdetails.html'
+    context_object_name = 'product'
+    queryset = Product.objects.all()
+    # def get_queryset(self):
+    #     product = super().get_queryset()
+    #     return product.select_related('category_id').annotate(
+    #         total_purchases=Count('name'))
+
 
 
 class CategoriesList(generic.ListView):

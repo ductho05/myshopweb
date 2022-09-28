@@ -1,3 +1,4 @@
+
 .mw{
     min-width: 650px !important;
 }
@@ -7,6 +8,9 @@
 a.disabled {
     pointer-events: none;
     color: #8e8e8e;
+}
+a:hover{
+    text-decoration: none;
 }
 .line{
     width: 50%;
@@ -95,10 +99,16 @@ a.disabled {
     margin-bottom:32px;
 }
 .footer{
+    /* position:absolute; */
+    margin-top: 220px;
     width: 100%;
     padding-top:16px;
     border-top:4px solid #17a2b8;
-   overflow: hidden;
+    overflow: hidden;
+}
+.container-position{
+    position: relative;
+    /* height:2900px; */
 }
 .footer-heading{
     font-size:1.0rem;
@@ -109,13 +119,12 @@ a.disabled {
     padding-left:2px;
 }
 .footer-item{
-    display: flex;
-    align-items: center;
     list-style: none;
-    margin: 10px 0px;
+    margin: 10px 2px;
     padding: 4px 0px;
 }
 .footer-item__link{
+    
     text-decoration: none;
     font-size: 0.9rem;
     color:#8e8e8e;
@@ -139,3 +148,48 @@ a.disabled {
     align-items: center;
     justify-content: center;
 }
+/* Card Container */
+.card-container:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 1px 20px 0 rgb(0 0 0 / 5%);
+    text-decoration: none!important;
+}
+.card-price{
+    font-size: 1.2rem;
+    padding:2px;
+    color:#000;
+    margin-bottom: 8px;
+}
+.card-btn{
+    position: absolute;
+    bottom: -3px;
+    left: 23px;
+    display: none;
+    width: 80%;
+}
+.card-btn:hover{
+    background-color: #17a2b8;
+    border:1px solid #17a2b8;
+}
+.card-name{
+    position: relative;
+    margin-bottom: 6px;
+    color:#000;
+    display:-webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-decoration: none;
+}
+.card-container:hover .card-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-body{
+    position: relative;
+    top:-12px;
+    padding:1.6rem;
+}
+

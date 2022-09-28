@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'customer',
     'manufacturer',
-    'product.apps.ProductConfig',
+    'product',
     'feedback',
     'crispy_forms',
     'easy_thumbnails',
