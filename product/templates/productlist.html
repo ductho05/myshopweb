@@ -31,12 +31,12 @@
     <hr />
     <div class="row product-info">
       {% for product in products %}
-        <a href="{%url 'product:productdetails'%}" class="col-lg-3 col-6 mb-2 px-sm-1 card-container">
+        <a href="{%url 'product:productdetails' product.id %}" class="col-lg-3 col-6 mb-2 px-sm-1 card-container">
             <div class="card shadow-sm h-100">
               <img
-                src="{% thumbnail product.image 230x230 %}"
+                src="{% thumbnail product.image 0x150 %}"
                 alt="No Image"
-                class="img-aspect p-2 product-image"
+                class="img-aspect product-image"
               >
               <div class="card-body product-body">
                 <p class="card-text card-name">{{product.name}}.</p>

@@ -1,4 +1,4 @@
-{% load static %}
+<!-- {% load static %} -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -112,12 +112,13 @@
         </button>
       </div>
     </nav>
-    <div class="container container-position">
+    <div class="container container-content container-background">
       <!-- {% if messages %} -->
       <!-- <div class="alert alert-success my-2"> -->
         <!-- {% for message in messages %} {{message}} {% endfor %} -->
       <!-- {% endif %} -->    
-          {%block content %} {% endblock content %}
+        {%block content %} 
+        {% endblock content %}
     </div>
     <div class="footer">
           <div class="d-flex justify-content-center align-items-center row">
