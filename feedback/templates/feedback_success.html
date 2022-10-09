@@ -1,0 +1,12 @@
+{%extends 'base.html'%}{%load static %}
+{%block title%} Feedback {%endblock%}
+{%block content%}
+{% csrf_token %}
+<div class="feedback_success-container flex-column d-flex justify-content-center align-items-center col-lg-12 my-4 h-0">
+    <h3 class="font-italic">Góp ý của bạn đã được ghi nhận,xin cảm ơn!</h3>
+    <a href="{% url 'feedback:feedback_form' %}">
+        <btn class="btn btn-outline-info feedback_success-btn">Trở lại</btn>
+    </a>
+
+</div>
+{%endblock%}

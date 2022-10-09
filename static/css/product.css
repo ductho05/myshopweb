@@ -217,6 +217,29 @@ a:hover{
 .details-price{
     color: #17a2b8;
 }
+.similar__product-container{
+    position: relative;
+    overflow-x: auto;
+}
+.similar__scroll-btn{
+    --size:30px;
+    position: absolute;
+    right: 10px;
+    bottom: 165px;
+    background-color: #fff;
+    width: var(--size);
+    height: var(--size);
+    -moz-border-radius: 70px; 
+    -webkit-border-radius: 70px; 
+    border-radius: 50%;
+}
+.similar__scroll-btn:hover{
+    transform: translate(5px,5px);
+    font-size: 1.3rem;
+    width:40px;
+    height:40px;
+    
+}
 .details-container:hover{
     transform: translateY(-3px);
 

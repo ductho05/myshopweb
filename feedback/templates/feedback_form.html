@@ -1,0 +1,49 @@
+{%extends 'base.html'%}{%load static %}
+{%block title%} Feedback {%endblock%}
+{%block content%}
+<div class="row d-flex flex-column ">
+    <div class="feedback_header d-flex flex-column justify-content-center align-items-center col-lg-12 my-4">
+        <h3 class="font-italic">GÓP Ý CỦA KHÁCH HÀNG</h3>
+        <!-- <h2 >Chúng tôi có thể giúp được gì</h2> -->
+    </div>
+    <!-- https://httpbin.org/anything -->
+    <form class="feedback_form" action="{%url 'feedback:feedback_form' %}" method = "POST">
+        {% csrf_token %}
+        <div class="feedback_form mb-5 col-lg-10">
+            <div class="feedback_form-container">
+                <h5 class ="feedback_form-container-header">*Tên đầy đủ</h5>
+                <input class="form-control feedback_form-container-input" type="text" placeholder="name" name="name" value =""></input>
+            </div>
+            <div class="feedback_form-container">
+                <h5 class ="feedback_form-container-header">*Email</h5>
+                <input class="form-control feedback_form-container-input" required="email" type="text" placeholder="email" name="email"></input>
+            </div>
+            <div class="feedback_form-container">
+                <h5 class ="feedback_form-container-header">*Số điện thoại</h5>
+                <input class="form-control feedback_form-container-input" required="email" type="text" placeholder="sđt" name="phone"></input>
+            </div>
+            <div class="feedback_form-container">
+                <h5 class ="feedback_form-container-header">*Chủ đề</h5>
+                <select name="subject_name" class="form-control feedback_form-container-input">
+                    <option value="Thời trang nam">Thời trang nam</option>
+                    <option value="Thời trang nữ">Thời trang nữ</option>
+                    <option value="Thời trang trẻ em">Thời trang trẻ em</option>
+                </select>
+            </div>
+            <div class="feedback_form-container">
+                <h5 class ="feedback_form-container-header">*Mô tả</h5>
+                <textarea  resize="both" cols="10" class="form-control feedback_form-container-input mb-2" type="description" placeholder="" name="contents"></textarea>
+            </div>
+            <button type="submit" class="btn btn-outline-info feedback-btn">Gửi phản hồi</button>
+        </div>
+        
+    </form>
+</div>
+<script>
+     const textarea = document.querySelector("textarea");
+      textarea.addEventListener("keyup", e =>{
+        textarea.style.height = "60px";
+        let scHeight = e.target.scrollHeight;
+        textarea.style.height = `${scHeight}px`;})
+</script>
+{%endblock%}

@@ -2,7 +2,7 @@
 <div class="similar-details">
     <h3 class="font-weight-light mb-0">Sản phẩm tương tự</h3>
     <hr />
-    <div class="row my-2">
+    <div class="row my-2 flex-nowrap similar__product-container">
     {% for product in products %}
     <a href="{%url 'product:productdetails' product.id %}" class="col-lg-3 col-md-4 col-6 mb-4 details-container">
         <div class="card shadow-sm h-100">
@@ -27,4 +27,5 @@
     </div>
     {% endfor %}
     </div>
+    <!-- <div class="similar__scroll-btn d-flex justify-content-center align-items-center"><i class="fa-solid fa-angle-right"></i></div> -->
 </div>
