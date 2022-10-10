@@ -1,0 +1,30 @@
+{% load thumbnail %}
+<div class="similar-details">
+    <h3 class="font-weight-light mb-0">Sản phẩm tương tự</h3>
+    <hr />
+    <div class="row my-2">
+    {% for product in products %}
+    <a href="{%url 'product:productdetails' product.id %}" class="col-lg-2 col-md-4 col-6 mb-4 details-container">
+        <div class="card shadow-sm h-100">
+        <img
+            src="{% thumbnail product.image 500x0 %}"
+            alt="{{product.name}}"
+            class="card-img-top img-aspect similar-image"
+        />
+        <div class="card-body">
+            <h4 class="card-subtitle font-weight-light mb-1 card-name similar-name">
+            <div href="{{ product.get_absolute_url }}">{{product.name}}</div>
+            </h4>
+            <h5 class="mb-0">
+            <span class="badge card-price " style="width: 120px;font-size: 16px;">{{product.price}} VNĐ</span>
+            </h5>
+        </div>
+        </div>
+    </a>
+    {% empty %}
+    <div class="col-12">
+        <h5 class="font-weight-light">No similar products found.</h5>
+    </div>
+    {% endfor %}
+    </div>
+</div>
