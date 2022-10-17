@@ -1,2 +1,0 @@
-# myshopweb
-Shop thời trang

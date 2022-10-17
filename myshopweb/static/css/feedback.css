@@ -1,0 +1,30 @@
+.feedback_form-container-header{
+    font-size:1.0rem;
+    color:#17a2b8;
+    flex:1;
+    max-width:200px;
+}
+.feedback-btn{
+    float:right;
+    margin-top:8px;
+}
+.feedback_success-btn{
+    font-size: 1.4rem;
+    margin-top:16px;
+    width:120px;
+    
+}
+.feedback_form-container-input{
+    flex:1;
+    margin:12px 0px;
+}
+.feedback_form{
+    margin-bottom: 12px;
+}
+.feedback_success-container{
+    display: flex;
+    font-size: 1.8rem;
+    position:absolute;
+    top:25%;
+    /* right:35%; */
+}

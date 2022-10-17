@@ -12,3 +12,8 @@
         align-items: center;
     }
 }
+@media (min-width:576px){
+    .brand_container {
+        display: none !important;
+    }
+}
