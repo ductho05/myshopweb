@@ -1,6 +1,5 @@
 from django.db import models
 from django.urls import reverse
-from customer.models import Category
 from django.utils.html import mark_safe
 from manufacturer.models import Manufacturer
 # Create your models here.
@@ -32,6 +31,10 @@ class Product(models.Model):
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name="Category")
     manufacturer_id = models.ForeignKey(Manufacturer, on_delete=models.CASCADE, verbose_name="Manufacturer")
     status = models.IntegerField(default=0, blank= True )
+    
+    class Meta:
+        ordering = ('id','name','price')
+
     def __unicode__(self):
         return self.content
     

@@ -16,7 +16,7 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+SECURE_SSL_REDIRECT = True
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -46,7 +46,10 @@ INSTALLED_APPS = [
     'feedback',
     'crispy_forms',
     'easy_thumbnails',
+    'sslserver',
     'django_filters',
+    'django_rest_passwordreset',
+    'social_django'
 ]
 
 MIDDLEWARE = [
@@ -112,7 +115,29 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+PASSWORD_HASHERS = [
+  'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+  'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+  'django.contrib.auth.hashers.Argon2PasswordHasher',
+  'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+  'django.contrib.auth.hashers.BCryptPasswordHasher',
+  'django.contrib.auth.hashers.SHA1PasswordHasher',
+  'django.contrib.auth.hashers.MD5PasswordHasher',
+  'django.contrib.auth.hashers.UnsaltedSHA1PasswordHasher',
+  'django.contrib.auth.hashers.UnsaltedMD5PasswordHasher',
+  'django.contrib.auth.hashers.CryptPasswordHasher',
+]
+AUTHENTICATION_BACKENDS = [
+  'social_core.backends.facebook.FacebookOAuth2',
+  'social_core.backends.google.GoogleOAuth2',
+  'django.contrib.auth.backends.ModelBackend',
+]
+SOCIAL_AUTH_FACEBOOK_KEY ='596626712147467'
+SOCIAL_AUTH_FACEBOOK_SECRET ='966c50af0f0f599cd9240c0d73619284'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY= '288721920080-1opgl0hrkjhphjih8cl2vmek6rm794cm.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+SOCIAL_AUTH_URL_NAMESPACE = "customer:social"
+AUTH_USER_MODEL = 'customer.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
@@ -148,3 +173,5 @@ TEMPLATE_DIRS = (
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = 'product:productlist'

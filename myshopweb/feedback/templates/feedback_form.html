@@ -9,7 +9,7 @@
     <!-- https://httpbin.org/anything -->
     <form class="feedback_form" action="{%url 'feedback:feedback_form' %}" method = "POST">
         {% csrf_token %}
-        <div class="feedback_form mb-5 col-lg-10">
+        <div class="feedback_form mb-5 col-lg-10 mx-auto">
             <div class="feedback_form-container">
                 <h5 class ="feedback_form-container-header">*Tên đầy đủ</h5>
                 <input class="form-control feedback_form-container-input" type="text" placeholder="name" name="name" value =""></input>
@@ -34,7 +34,7 @@
                 <h5 class ="feedback_form-container-header">*Mô tả</h5>
                 <textarea  resize="both" cols="10" class="form-control feedback_form-container-input mb-2" type="description" placeholder="" name="contents"></textarea>
             </div>
-            <button type="submit" class="btn btn-outline-info feedback-btn">Gửi phản hồi</button>
+            <button type="submit" class="btn btn-outline-info feedback-btn profile-btn">Gửi phản hồi</button>
         </div>
         
     </form>

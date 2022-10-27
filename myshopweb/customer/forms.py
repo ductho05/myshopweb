@@ -1,6 +1,7 @@
 from django import forms
 import re
-from django.contrib.auth.models import User
+from .models import User
+from django.contrib.auth.forms import PasswordChangeForm
 from django.core.exceptions import ObjectDoesNotExist
 class RegistrationForm(forms.Form):
     username = forms.CharField(label="Tên đăng nhập", max_length=50)

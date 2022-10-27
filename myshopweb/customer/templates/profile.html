@@ -1,0 +1,48 @@
+{%extends 'base.html'%} {%load crispy_forms_tags%} {%load static%} 
+{%block content%}
+ 
+<div class="row my-4 profile-container">
+  <div class="col-md-11 profile-header">
+    <h3 class="header-myprofile">Hồ sơ của tôi</h3>
+    <h5 class="header-policy">Quản lý thông tin hồ sơ để bảo mật tài khoản</h5>
+  </div>  
+  <div class="col-md-12 col-lg-9 col-12 d-flex justify-content-center flex-column profile-container-content">
+    <form method="POST" style="width:100%" class= "profile-form">
+      {% csrf_token %}  
+        <ul class="profile-list">
+          <li class="profile-list-item">
+              <label class="profile-label">Tên đăng nhập</label>
+              <input name ="username" type="username" value="{{user.username}}" class="form-control profile-input" >
+          </li>
+          <li class="profile-list-item">
+          
+              <label class="profile-label">Tên</label>
+              <input name="full_name" value="{{user.full_name|default:''}}"  class="form-control profile-input" required>
+            </li>
+          <li class="profile-list-item">
+              <label class="profile-label">Email</label>
+              <input readonly name="email" value="{{user.email}}" class="form-control profile-input" required >
+          </li>
+          <li class="profile-list-item">
+              <label class="profile-label">Số điện thoại</label>
+              <input name="phone_number" value="{{user.phone_number|default:''}}" class="form-control profile-input" required>
+          </li>
+          <li class="profile-list-item">
+            <label class="profile-label">Địa chỉ</label>
+            <input name="address" value="{{user.address|default:''}}" class="form-control profile-input" required>
+        </li>
+          <li class="profile-list-item">
+              <label class="profile-label">Ngày sinh</label>
+              <input type="date" name="date" class="form-control profile-input-split" >
+              <input readonly type="text" value="{{user.date|default:''}}" class="form-control profile-input-split">
+          </li>
+        </ul>
+        <button  class="btn btn-outline-info feedback-btn profile-btn" type="submit">Lưu thay đổi</button>    
+    </form>
+  </div>
+  <div class="profile-avatar">
+    <img src="{% static 'avatar.svg' %}" alt="Avatar" class="img-fluid" />
+  </div>
+ 
+</div>
+{% endblock content %}

@@ -1,0 +1,170 @@
+    .signup {
+    padding: 80px 85px;
+    background-color: #fff;
+    /* width: 100%; */
+    max-width: 600px;
+    border-radius: 2px;
+    margin:30px 0px;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 1px 20px 0 rgb(0 0 0 / 10%);
+  }
+  .signup-heading {
+    font-size: 34px;
+    font-weight: bold;
+    color: #373941;
+    text-align: center;
+    margin-bottom: 35px;
+  }
+  .signup-social {
+    padding: 5px;
+    
+    width: 100%;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    border: 0;
+    /* background-color: #4c6ff4; */
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    /* box-shadow: 0 5px 10px 0 rgba(76, 111, 244, 0.5); */
+  }
+  .signup-social-google{
+    margin-right: -32px;
+    background-image: url('https://imagepng.org/wp-content/uploads/2019/08/google-icon.png');
+    background-size:46px 46px;
+    background-repeat: no-repeat;
+    border:1px solid #bdbdbd ;
+  }
+  .signup-social-facebook{
+    background-image: url('https://freepngimg.com/download/facebook/62603-messenger-computer-facebook-icons-free-download-png-hq.png');
+    background-size:46px 46px;
+    background-repeat: no-repeat;
+    border:1px solid #bdbdbd ;
+  }
+
+
+  .signup-social-icon{
+    padding:10px 0px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4c6ff4;
+    font-size: 44px;
+    border-radius: 25%;
+  }
+  .signup-social-icon-google{
+    color: #dd4b3e;
+  }
+  .signup-social-text {
+    font-size: 1.5rem;
+    text-align: right;
+    margin-left: 11px;
+    margin-right: 17px;
+    color: #216bb1;
+    margin-top:1px;
+    flex:1;
+  }
+  .text-facebook{
+    color:#216bb1;
+  }
+  .text-google{
+    color:#dd4b3e;
+    margin-right:30px;
+  }
+  .signup-social:hover{
+    background-color: rgba(0,0,0,.05);
+  }
+  .signup-or {
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    margin: 20px auto;
+    position: relative;
+  }
+  .signup-or span {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #fff;
+    position: relative;
+    z-index: 2;
+  }
+  .signup-or:after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #999;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  .signup-label {
+    flex:1;
+    margin: 8px 0px;
+    font-size: 16px;
+    color: #63676b;
+    font-weight: 500;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .signup-input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border-radius: 14px;
+    background-color: #f5f5f5;
+    outline: none;
+    border: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    margin-bottom: 26px;
+  }
+  .signup-username-input,
+  .signup-password-input{
+    max-width: 330px;
+  }
+  .signup-input::-webkit-input-placeholder {
+    color: #b4bac0;
+    font-weight: 500;
+  }
+  .signup-input::-moz-input-placeholder {
+    color: #b4bac0;
+    font-weight: 500;
+  }
+  .signup-submit {
+    padding: 10px;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    border: 0;
+    outline: none;
+    display: inline-block;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #17a2b8;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 5px 10px 0 #17a2b8;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .signup-already {
+    text-align: center;
+    font-size: 16px;
+    color: #999;
+  }
+  .signup-login-link {
+    color: #2979ff;
+    text-decoration: none;
+  }
+  .social-icon-list{
+    justify-content:space-between;
+  }

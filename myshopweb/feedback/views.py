@@ -1,5 +1,6 @@
-from http.client import HTTPResponse
 from django.shortcuts import render
+from django.utils.decorators import method_decorator 
+from django.contrib.auth.decorators import login_required
 from django.views import generic
 from .models import Feedback
 # Create your views here.
@@ -16,6 +17,9 @@ class FeedBackViews(generic.ListView):
         queryset.save()
         queryset.clean_fields()
         return render(request,'feedback_success.html')
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(FeedBackViews, self).dispatch(*args, **kwargs)
         
 
         

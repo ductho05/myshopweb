@@ -1,5 +1,5 @@
 from django.contrib import admin
-from customer.models import Category
+from product.models import Category
 # Register your models here.
 
 class SettingAdmin(admin.ModelAdmin):

@@ -1,30 +1,38 @@
-{% extends 'base.html' %} {% load crispy_forms_tags %} {% block title %} Login
-{% endblock title %} {% block content %}
-<div class="card auth-card card-body mx-auto my-4 shadow-sm">
-  <h1 class="display-4 text-center">Đăng nhập</h1>
-  <form action = "." method="POST">
-    {% csrf_token %}
-    {% for key, value in form.errors.items %}
-      {{value}}
-    {% endfor %}
-    <div>
-      <p><label>Tên đăng nhập</label>{{form.username}}</p>
-    </div>
-    <div>
-      <p><label>Mật khẩu</label>{{form.password}}</p>
-    </div>
-    <a href="" class="mb-2 d-block"
-      >Forgot Password?</a
-    >
-    <input type="hidden" name="next" value="/">
-    <div class="row">
-      <div class="col-6 pr-1">
-        <button class="btn btn-primary btn-block" type="submit">Đăng nhập</button>
+{%extends 'base.html'%} {% load crispy_forms_tags %} {%load static%}
+{% block title %} Login
+{% endblock title %} {%block content%}
+<div>
+  {% include 'messages.html' %}
+    <form action = "." method="POST"> 
+      {%csrf_token%}
+      <div class="signup mx-auto row">
+        
+        <h1 class="signup-heading col-lg-12 col-md-12 col-12">Đăng nhập</h1>        
+        
+          <p class="signup-input d-flex col-md-12 col-lg-12 col-12"><label for="fullname" class="signup-label">Tài khoản:</label>
+            <input name="username" class="form-control signup-username-input" type="text" required>
+          </p> 
+          <p class="signup-input d-flex col-md-12 col-lg-12 col-12"><label for="password" class="signup-label">Mật khẩu:</label>
+          <input name="password" class="form-control signup-password-input" type="password" required>
+          </p>
+          <input  name="next" type="hidden" name="next" value="/">
+          <button class="signup-submit mx-auto col-md-12 col-lg-12 col-12" type="submit">Đăng nhập</button>
+         <p class="signup-already mx-auto">
+          <span>Quên mật khẩu?</span>
+          <a href="#" class="signup-login-link">Tại đây</a>
+        </p>
+        <div class="signup-or col-md-12 col-lg-12 col-12"><span>Hoặc</span></div>
+        <div class="social-icon-list d-flex row col-md-12 col-lg-12 col-12">
+            <a  href="{%url 'customer:social:begin' 'facebook' %}" class="signup-social signup-social-facebook col-6 col-md-6 col-lg-6">
+              <!-- <i class="fa-brands fa-facebook signup-social-icon signup-social-icon-facebook"></i> -->
+              <span class="signup-social-text text-facebook">Facebook</span>
+            </a>
+            <a  href="{%url 'customer:social:begin' 'google-oauth2' %}" class="signup-social signup-social-google btn btn-outline col-6 col-md-6 col-lg-6">
+              <!-- <i class="fa-brands fa-google signup-social-icon signup-social-icon-google"></i> -->
+              <span class="signup-social-text text-google">Google</span>
+            </a>
+        </div>
       </div>
-      <div class="col-6 pl-1">
-        <button class="btn btn-danger btn-block" type="reset">làm mới</button>
-      </div>
-    </div>
-  </form>
+    </form>
 </div>
-{% endblock content %}
+{%endblock%}
