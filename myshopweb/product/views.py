@@ -6,7 +6,6 @@ from .filter import ProductFilter
 from .models import Category,Product
 from manufacturer.models import Manufacturer
 from django.db.models import Count
-from django.shortcuts import render
 # def listing(request):
 #     product_list = Product.objects.all()
 #     paginator = Paginator(product_list, 25) # Show 25 contacts per page.

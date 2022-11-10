@@ -16,6 +16,7 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 SECURE_SSL_REDIRECT = True
 
 # Quick-start development settings - unsuitable for production
@@ -27,7 +28,7 @@ SECRET_KEY = 'django-insecure-(amy=6817&%n9roqco4bss_#ui!6@$jd$)_c%$3_ss4!0covhv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','localhost']
 
 
 # Application definition
@@ -49,7 +50,9 @@ INSTALLED_APPS = [
     'sslserver',
     'django_filters',
     'django_rest_passwordreset',
-    'social_django'
+    'social_django',
+    'cart',
+    'orders'
 ]
 
 MIDDLEWARE = [
@@ -66,6 +69,7 @@ ROOT_URLCONF = 'myshopweb.urls'
 
 TEMPLATES = [
     {
+        
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS':[os.path.join(BASE_DIR, 'templates')] ,
         'APP_DIRS': True,
@@ -90,7 +94,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'shop_web',
-        'PASSWORD':'123456',
+        'PASSWORD':'',
         'USER':'root',
         'POST':'localhost',
         'PORT':'',

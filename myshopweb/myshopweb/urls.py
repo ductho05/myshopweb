@@ -24,5 +24,7 @@ urlpatterns = [
     path("customer/",include("customer.urls")),
     path("feedback/",include("feedback.urls")),
     path('admin/', admin.site.urls),
-    path('api/password_reset/', include('django_rest_passwordreset.urls', namespace='password_reset'))
+    path('api/password_reset/', include('django_rest_passwordreset.urls', namespace='password_reset')),
+    path('cart/', include('cart.urls', namespace='cart')),
+    path('orders/', include('orders.urls', namespace='orders')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
